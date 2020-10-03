@@ -62,32 +62,51 @@ window.onload = function () {
   });
 
   /*Timer Code*/
-  let timecounted;
-  let interval;
-  document.querySelector("input").addEventListener("change", (e) => {
-    timecounted =e.target.value;
+  let timeInSeconds, timeInMinutes, timeInHours, interval;
+  document.querySelector("#secondsInput").addEventListener("change", (e) => {
+    timeInSeconds = e.target.value;
   });
-  const buttonStop=document.querySelector("#start-timer");
-  buttonStop.addEventListener("click", () => {
-         var displayTime = () => {
-          document.querySelector("input").value = timecounted;
-          console.log(timecounted);
-      };
-  interval = setInterval(() => {
-     displayTime();
-    timecounted -= 1;
-      if (timecounted < 0) {
+  document.querySelector("#minutesInput").addEventListener("change", (e) => {
+    timeInMinutes = e.target.value;
+  });
+  document.querySelector("#hoursInput").addEventListener("change", (e) => {
+    timeInHours = e.target.value;
+  });
+
+  document.querySelector("#start-timer").addEventListener("click", () => {
+    let secondTimer =
+      Number((timeInHours * 60 * 60)) +
+      Number((timeInMinutes * 60)) +
+      Number(timeInSeconds);
+    var displayTime = () => {
+      var displayHours = Math.floor(secondTimer / (60 * 60));
+      var remainder = secondTimer - displayHours * 60 * 60;
+      var displayMinutes = Math.floor(remainder / 60);
+      var displaySeconds = remainder - displayMinutes * 60;
+      document.querySelector("#secondsInput").value = displaySeconds + "s";
+      document.querySelector("#minutesInput").value = displayMinutes + "m";
+      document.querySelector("#hoursInput").value = displayHours + "h";
+    };
+    interval = setInterval(() => {
+      displayTime();
+      secondTimer -= 1;
+      if (secondTimer < 0) {
         clearInterval(interval);
-        document.querySelector('h1').textContent='EXPIRED!!';
+        document.querySelector("h1").textContent = "EXPIRED!!";
       }
     }, 1000);
   });
-  document.querySelector('#stop-timer').addEventListener('click',()=>{
+  document.querySelector("#stop-timer").addEventListener("click", () => {
     clearInterval(interval);
   });
-  document.querySelector('#reset-timer').addEventListener('click',()=>{
+  document.querySelector("#reset-timer").addEventListener("click", () => {
     clearInterval(interval);
-    document.querySelector("input").value = "0s";
-    timecounted = 0;
-  })
+    document.querySelector("h1").textContent = "";
+    document.querySelector("#secondsInput").value = 0;
+    document.querySelector("#minutesInput").value = 0;
+    document.querySelector("#hoursInput").value = 0;
+    timeInHours = 0;
+    timeInMinutes = 0;
+    timeInSeconds = 0;
+  });
 };
