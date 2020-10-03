@@ -1,4 +1,6 @@
 window.onload = function () {
+  /*Stop Watch code*/
+
   let start = document.querySelector("#start"),
     stop = document.querySelector("#stop"),
     reset = document.querySelector("#reset"),
@@ -49,18 +51,43 @@ window.onload = function () {
   let list_1 = document.querySelector(".list-1"),
     list_2 = document.querySelector(".list-2"),
     watchDiv = document.querySelector(".watch-div");
-    timerDiv = document.querySelector(".timer-div");
+  timerDiv = document.querySelector(".timer-div");
   list_1.addEventListener("click", () => {
     watchDiv.style.display = "none";
-    timerDiv.style.display='block';
-    // timerDiv.style.backgroundColor= 'azure';
-
+    timerDiv.style.display = "block";
   });
-  list_2.addEventListener('click',()=>{
-    timerDiv.style.display='none';
+  list_2.addEventListener("click", () => {
+    timerDiv.style.display = "none";
     watchDiv.style.display = "block";
-    // watchDiv.style.backgroundColor= 'azure';
+  });
 
-
+  /*Timer Code*/
+  let timecounted;
+  let interval;
+  document.querySelector("input").addEventListener("change", (e) => {
+    timecounted =e.target.value;
+  });
+  const buttonStop=document.querySelector("#start-timer");
+  buttonStop.addEventListener("click", () => {
+         var displayTime = () => {
+          document.querySelector("input").value = timecounted;
+          console.log(timecounted);
+      };
+  interval = setInterval(() => {
+     displayTime();
+    timecounted -= 1;
+      if (timecounted < 0) {
+        clearInterval(interval);
+        document.querySelector('h1').textContent='EXPIRED!!';
+      }
+    }, 1000);
+  });
+  document.querySelector('#stop-timer').addEventListener('click',()=>{
+    clearInterval(interval);
+  });
+  document.querySelector('#reset-timer').addEventListener('click',()=>{
+    clearInterval(interval);
+    document.querySelector("input").value = "0s";
+    timecounted = 0;
   })
 };

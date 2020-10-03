@@ -12,33 +12,40 @@
   </head>
   <body>
     <main>
-    <div class="tabs-div">
-      <ul>
-        <li class="list-1"> Timer</li>
-        <li class="list-2">Stop Watch</li>
-      </ul>
-    </div>
-    <div class="watch-div">
-      <p>
-        <time>00s.<span>00</span></time>
-      </p>
-      <div class="buttons-div">
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-      <button id="reset">Reset</button>
-    </div>
-    </div>
-    <div class="timer-div">
-      <p>
-        <time>00m.<span>00s</span></time>
-      </p>
-      <div class="buttons-div">
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-      <button id="reset">Reset</button>
-    </div>
-    </div>
-  </main>
+      <div class="tabs-div">
+        <ul>
+          <li class="list-1">Timer</li>
+          <li class="list-2">Stop Watch</li>
+        </ul>
+      </div>
+      <div class="watch-div">
+        <p>
+          <time>00s.<span>00</span></time>
+        </p>
+        <div class="buttons-div">
+          <button id="start">Start</button>
+          <button id="stop">Stop</button>
+          <button id="reset">Reset</button>
+        </div>
+      </div>
+      <div class="timer-div">
+        <h1></h1>
+        <div class="input-div">
+          <span class="h-span">00</span>
+          <span class="h small" style="font-size: 20px; top: 20px">h</span>
+          <span class="m-span">00</span>
+          <span class="m small" style="font-size: 20px;top: 20px">m</span>
+          <span class="s-span">00</span>
+          <span class="s small" style="font-size: 20px;top: 20px">s</span>
+          <input value="0s"/>
+        </div>
+        <div class="buttons-div">
+          <button id="start-timer">Start</button>
+          <button id="stop-timer">Stop</button>
+          <button id="reset-timer">Reset</button>
+        </div>
+      </div>
+    </main>
     <script src="./js/index.js"></script>
   </body>
 </html>

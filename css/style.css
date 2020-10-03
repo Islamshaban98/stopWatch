@@ -1,61 +1,110 @@
-main{
-    margin: auto;
-    padding: 150px 0;
+main {
+  margin: auto;
+  padding: 150px 0;
 }
-.tabs-div{
-    background-color: antiquewhite;
-    width: 50%;
-    padding: 20px;
-    margin: auto;
+.tabs-div {
+  background-color: antiquewhite;
+  width: 50%;
+  padding: 20px;
+  margin: auto;
 }
-ul{
-list-style: none;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-li{
-  color: brown; 
+li {
+  color: brown;
   font-size: 24px;
   font-weight: bold;
 }
 
-.watch-div{
-    margin: auto;
-    width: 50%;
-    padding: 20px;
-    background-color: azure;
+.watch-div {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  background-color: azure;
 }
-.buttons-div{
-    margin: auto;
-    padding: 20px;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
+.buttons-div {
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
 }
-p{
-    text-align: center;
+p {
+  text-align: center;
 }
-button{
-    padding: 10px;
-    background-color: brown;
-    color: azure;
-    border: 0px;
-    border-radius: 5px;
-    
+button {
+  padding: 15px;
+  background-color: brown;
+  color: azure;
+  border: 0px;
+  border-radius: 5px;
 }
 time {
-color: brown;
-font-size: 36px;
+  color: brown;
+  font-size: 36px;
 }
 
-span{
-    font-size: 20px;
+span {
+  font-size: 20px;
 }
-.timer-div{ 
-    display: none;
-    margin: auto;
-    width: 50%;
-    padding: 20px;
-    background-color: azure;
+.timer-div {
+  display: none;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  background-color: azure;
+}
+h1{
+    /* margin: 0 auto; */
+    color: brown;
+    text-align: center;
+
+}
+input {
+  margin: 0 auto;
+  display: block;
+  width: 30%;
+  background-color: brown;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0px;
+  font-size: 24px;
+  color: azure;
+}
+.input-div {
+  position: relative;
+}
+.input-div input {
+  text-indent: 30px;
+}
+.input-div span {
+  position: absolute;
+  top: 15px;
+  font-size: 24px;
+  color: azure;
+  display: none;
+}
+.h-span {
+  left: 250px;
+}
+.h {
+  left: 280px;
+}
+.m-span {
+  left: 300px;
+}
+.m {
+  left: 330px;
+}
+.s-span {
+  left: 355px;
+}
+.s {
+  left: 385px;
+}
+.small{
 }
