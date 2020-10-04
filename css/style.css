@@ -69,21 +69,20 @@ span {
   background-color: azure;
 }
 h1{
-    /* margin: 0 auto; */
     color: brown;
     text-align: center;
-
 }
 input {
   margin: 0 auto;
   display: block;
   width: 15%;
-  background-color: brown;
   padding: 15px;
-  border-radius: 5px;
-  border: 0px;
+  border-top : none;
+  border-left : none;
+  border-right : none;
+  border-bottom-color: brown;
   font-size: 24px;
-  color: azure;
+  color: brown;
 }
 .input-div {
   display: flex;

@@ -6,7 +6,7 @@ window.onload = function () {
     reset = document.querySelector("#reset"),
     time = document.querySelector("time"),
     Time,
-    tens,
+    tens=0,
     seconds = 0,
     minutes = 0,
     hours = 0;
@@ -25,8 +25,8 @@ window.onload = function () {
       }
     }
     time.textContent =
-      (hours ? (hours >= 9 ? hours : "0" + hours + ":") : "") +
-      (minutes ? (minutes > 9 ? minutes : "0" + minutes + ":") : "") +
+      (hours ? (hours >= 9 ? hours + 'h' : "0" + hours +"h" + ":") : "") +
+      (minutes ? (minutes > 9 ? minutes +'m' : "0" + minutes + 'm' + ":") : "") +
       (seconds ? (seconds > 9 ? seconds : "0" + seconds) : "00") +
       "s." +
       (tens ? (tens > 9 ? tens : "0" + tens) : "00");
@@ -62,7 +62,7 @@ window.onload = function () {
   });
 
   /*Timer Code*/
-  let timeInSeconds, timeInMinutes, timeInHours, interval;
+  let timeInSeconds =0, timeInMinutes=0, timeInHours=0, interval;
   document.querySelector("#secondsInput").addEventListener("change", (e) => {
     timeInSeconds = e.target.value;
   });
